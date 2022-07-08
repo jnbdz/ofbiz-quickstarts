@@ -10,10 +10,13 @@ OFBiz guías de inicio rápido.
 OFBiz 快速入门。
 
 ## Description - EN
+[Wikipedia](https://en.wikipedia.org/wiki/Apache_OFBiz) ~ *Apache OFBiz is an open source enterprise resource planning (ERP) system. It provides a suite of enterprise applications that integrate and automate many of the business processes of an enterprise.*
 
 ## Description - FR
+[Wikipédia](https://fr.wikipedia.org/wiki/Apache_OFBiz) ~ *Apache OFBiz est un système de planification des ressources d'entreprise (ERP) open source. Il fournit une suite d'applications d'entreprise qui intègrent et automatisent de nombreux processus métier d'une entreprise.*
 
 ## Descripción - ES
+[Wikipedia](https://es.wikipedia.org/wiki/Apache_OFBiz) ~ *Apache OFBiz es un sistema de planificación de recursos empresariales (ERP) de código abierto. Proporciona un conjunto de aplicaciones empresariales que integran y automatizan muchos de los procesos comerciales de una empresa.*
 
 ## 描寫 - 中文 (ZH)
-
+[维基百科 (EN)](https://en.wikipedia.org/wiki/Apache_OFBiz) ~ *Apache OFBiz 是一个开源企业资源规划 (ERP) 系统。它提供了一套企业应用程序，可以集成和自动化企业的许多业务流程。*
