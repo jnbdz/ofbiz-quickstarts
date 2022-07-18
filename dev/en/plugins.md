@@ -2,7 +2,7 @@
 [Installing the plugins](./plugins.md).
 
 ## List of plugins
-- [Assetmaint component](https://github.com/apache/ofbiz-plugins/tree/trunk/assetmaint)
+- [Assetmaint component](https://github.com/apache/ofbiz-plugins/tree/trunk/assetmaint): 
     - *The asset management and maintenance application enables organisations to maintain a register of all kinds of assets. It enables them to plan maintenance and keep track of allocations and use. Integrates with the accounting module regarding depreciation bookings.*
     - Features: 
         - Asset registration
@@ -10,8 +10,8 @@
         - Depreciation calculation and registration
         - Meter registrations
         - Allocation registration
-- [bi](https://github.com/apache/ofbiz-plugins/tree/trunk/bi)
-- [Birt component](https://github.com/apache/ofbiz-plugins/tree/trunk/birt)
+- [bi](https://github.com/apache/ofbiz-plugins/tree/trunk/bi): 
+- [Birt component](https://github.com/apache/ofbiz-plugins/tree/trunk/birt): 
     - BI (Business Intelligent) reporting tool.
     - Related links:
         - https://cwiki.apache.org/confluence/display/OFBIZ/Using+BIRT+with+OFBiz
@@ -20,4 +20,26 @@
         - Blog posts: 
             - https://blogs.apache.org/ofbiz/entry/the-birt-flexible-reports-a
             - https://www.innoventsolutions.com/open-source-reporting-review-birt-jasper-pentaho.html
-- 
+- [cmssite](https://github.com/apache/ofbiz-plugins/tree/trunk/cmssite): 
+     - CMS Site
+- [ebay](https://github.com/apache/ofbiz-plugins/tree/trunk/ebay): 
+     - ...
+- [ebaystore](https://github.com/apache/ofbiz-plugins/tree/trunk/ebaystore): 
+    - ...
+- [ecommerce component](https://github.com/apache/ofbiz-plugins/tree/trunk/ecommerce): 
+    - For *Janrain Engage Social Login*. This plugin helps with login with social media and other types of websites so that a user does not need to create an account.
+    - Useful links: 
+        - https://www.akamai.com/products/identity-cloud
+        - https://janrain-education-center.knowledgeowl.com/home/social-login
+- [example](https://github.com/apache/ofbiz-plugins/tree/trunk/example): 
+    - Simple OFBiz example.
+- [exampleext](https://github.com/apache/ofbiz-plugins/tree/trunk/exampleext): 
+    - ...
+- [First Data Payment Gateway](https://github.com/apache/ofbiz-plugins/tree/trunk/firstdatapaymentgateway): 
+    - [First Data](https://firstdata.com) is a PG/PSP (Payment Gateway/Payment Service Provider). It is now known as [Fiserv](http://www.fiserv.com/).
+- [ldap](https://github.com/apache/ofbiz-plugins/tree/trunk/ldap): 
+    - LDAP support.
+- [Lucene](https://github.com/apache/ofbiz-plugins/tree/trunk/lucene): 
+    - *This component enables integrators to enhance indexing and search/find capabilities regarding OFBiz data elements based on integrated Apache Lucene features and functionalities.*
+- [msggateway](https://github.com/apache/ofbiz-plugins/tree/trunk/msggateway): 
+    - Uses [MSG91](http://control.msg91.com/signup/?source=developer-SMS) to send SMS.
