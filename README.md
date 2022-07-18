@@ -17,7 +17,7 @@ OFBiz 快速入门。
 - It exist to facilitate the building of Ennterprise Resource Planning (ERP).
     - Integration of *business processes* and *underlying data* into a single system.
 - It has tools like: 
-    - Warehouse Management System (WMS).
+    - [Warehouse Management System (WMS)](https://en.wikipedia.org/wiki/Warehouse_management_system).
     - Accounting system.
     - Full order.
     - Product management systems.
