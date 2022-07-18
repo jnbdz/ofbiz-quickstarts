@@ -2,7 +2,7 @@
 [Installing the plugins](./plugins.md).
 
 ## List of plugins
-- Assetmaint component
+- [Assetmaint component](https://github.com/apache/ofbiz-plugins/tree/trunk/assetmaint)
     - *The asset management and maintenance application enables organisations to maintain a register of all kinds of assets. It enables them to plan maintenance and keep track of allocations and use. Integrates with the accounting module regarding depreciation bookings.*
     - Features: 
         - Asset registration
@@ -10,8 +10,8 @@
         - Depreciation calculation and registration
         - Meter registrations
         - Allocation registration
-- bi
-- Birt component
+- [bi](https://github.com/apache/ofbiz-plugins/tree/trunk/bi)
+- [Birt component](https://github.com/apache/ofbiz-plugins/tree/trunk/birt)
     - BI (Business Intelligent) reporting tool.
     - Related links:
         - https://cwiki.apache.org/confluence/display/OFBIZ/Using+BIRT+with+OFBiz
