@@ -4,6 +4,8 @@
     - Keep your code organized
 - Many ready-mande ERP (Enterprise Resource Planning) components
 
+## Other documentation sources
+
 ## Download
 The two ways you can download [OFBiz](https://ofbiz.apache.org/): 
 1. Zip file: https://ofbiz.apache.org/download.html
@@ -18,3 +20,8 @@ The two ways you can download [OFBiz](https://ofbiz.apache.org/):
     > https://github.com/apache/ofbiz-plugins this the repo for the plugins. I document how to use them later.
 
 ## Install
+
+### Install plugins
+```bash
+./gradlew createPlugin -PpluginId=ofbizDemo
+```
