@@ -11,6 +11,7 @@
         - Meter registrations
         - Allocation registration
 - [bi](https://github.com/apache/ofbiz-plugins/tree/trunk/bi): 
+    - Maybe Business Intelligents?
 - [Birt component](https://github.com/apache/ofbiz-plugins/tree/trunk/birt): 
     - BI (Business Intelligent) reporting tool.
     - Related links:
@@ -34,7 +35,7 @@
 - [example](https://github.com/apache/ofbiz-plugins/tree/trunk/example): 
     - Simple OFBiz example.
 - [exampleext](https://github.com/apache/ofbiz-plugins/tree/trunk/exampleext): 
-    - ...
+    - Maybe an extension of the example?
 - [First Data Payment Gateway](https://github.com/apache/ofbiz-plugins/tree/trunk/firstdatapaymentgateway): 
     - [First Data](https://firstdata.com) is a PG/PSP (Payment Gateway/Payment Service Provider). It is now known as [Fiserv](http://www.fiserv.com/).
 - [ldap](https://github.com/apache/ofbiz-plugins/tree/trunk/ldap): 
@@ -70,4 +71,11 @@
         - Project templates
 - [Apache OFBiz® plugin for REST](https://github.com/apache/ofbiz-plugins/tree/trunk/rest-api): 
     - *This initial implementation helps to expose existing or new OFBiz services as REST. To facilitate this, added a new "action" attribute to service elements that helps to determine how a particular service can be accessed via REST.*
-    - 
+- [Scrum](https://github.com/apache/ofbiz-plugins/tree/trunk/scrum): 
+    - *This component enables organisations to manage agile project, product backlogs and sprints.*
+- [Solr](https://github.com/apache/ofbiz-plugins/tree/trunk/solr): 
+    - *This component leverages Apache Solr indexing capabilities.*
+    - Links: 
+        - http://lucene.apache.org/solr/
+- [webpos](https://github.com/apache/ofbiz-plugins/tree/trunk/webpos): 
+    - Seems to be a plugin for POS (Point Of Sale).
