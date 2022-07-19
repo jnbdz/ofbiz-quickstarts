@@ -68,3 +68,6 @@
         - Project copy
         - Project, project phases and tasks show planned and actual time spent
         - Project templates
+- [Apache OFBiz® plugin for REST](https://github.com/apache/ofbiz-plugins/tree/trunk/rest-api): 
+    - *This initial implementation helps to expose existing or new OFBiz services as REST. To facilitate this, added a new "action" attribute to service elements that helps to determine how a particular service can be accessed via REST.*
+    - 
