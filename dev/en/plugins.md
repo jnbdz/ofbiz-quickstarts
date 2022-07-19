@@ -43,3 +43,28 @@
     - *This component enables integrators to enhance indexing and search/find capabilities regarding OFBiz data elements based on integrated Apache Lucene features and functionalities.*
 - [msggateway](https://github.com/apache/ofbiz-plugins/tree/trunk/msggateway): 
     - Uses [MSG91](http://control.msg91.com/signup/?source=developer-SMS) to send SMS.
+- [multiflex](https://github.com/apache/ofbiz-plugins/tree/trunk/multiflex):  
+    - Seems to be a theme.
+- [myportal](https://github.com/apache/ofbiz-plugins/tree/trunk/myportal): 
+    - *This component enables organisations to provide their users with a self service starting point. Enabling both internal (employees) and external (customers, sub-contractors) to manage their own profile for the back-end applications of OFBiz™, register time spent on projects and manufacturing tasks and manage their schedule and tasks.*
+    - Features: 
+        - Page management (application admin)
+        - Time registration
+        - Tasks execution
+        - Profile management
+- [passport](https://github.com/apache/ofbiz-plugins/tree/trunk/passport): 
+    - *The passport component is to support users to login with a third party OAuth2 authentication such as GitHub, LinkedIn and etc.*
+- [PriCat](https://github.com/apache/ofbiz-plugins/tree/trunk/pricat): 
+    - *PriCat is the abbreviation of Price and Catalog/Category. The PriCat component is to support importing/parsing excel files with price and catalog/category data. The excel files can be checked by version, header column names, currencyId. Each row can be validated by facility(name, Id and ownership), required fields, string or number and etc. PriCat component contains two webapps: /pricat/ and /pricatdemo/. In production environment, you SHOULD remove or disable the /pricatdemo/.*
+- [ProjectMgr](https://github.com/apache/ofbiz-plugins/tree/trunk/projectmgr): 
+    - *This component enables organisations to manage projects, project phases and project tasks. The Project Management application enables organisations to manage their internal and external projects in a professional manner. It allows them to collaborate with their customers on projects. Approved time spent on external (time/material) projects will generate invoices in the Accounting application of OFBiz.*
+    - Features: 
+        - Resource assignement to projects
+        - Resource allocation to tasks
+        - Approval of time spent on tasks
+        - Gantt charts for projects, phases and tasks
+        - Time registration with different rates
+        - Generate invoice from a project
+        - Project copy
+        - Project, project phases and tasks show planned and actual time spent
+        - Project templates
