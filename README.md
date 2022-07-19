@@ -28,7 +28,7 @@ OFBiz 快速入门。
     - Multilingual.
     - It can adapt the language of the website based on the oringin of the user.
     - Supports all well known databases.
-    - Many more tools and features.
+    - [Many more tools and features](https://ofbiz.apache.org/business-users.html#UsrModules).
 
 ## Description - FR
 [Wikipédia](https://fr.wikipedia.org/wiki/Apache_OFBiz) ~ *Apache OFBiz est un système de planification des ressources d'entreprise (ERP) open source. Il fournit une suite d'applications d'entreprise qui intègrent et automatisent de nombreux processus métier d'une entreprise.*
