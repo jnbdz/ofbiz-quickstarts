@@ -121,4 +121,25 @@ It seems to clean up stuff added by Eclipse.
 - cleanCatalina - Clean Catalina data in runtime/catalina/work
 - cleanData - Clean all DB data (Derby) under runtime/data
 - cleanDownloads - Clean all downloaded files
-- 
+- cleanLogs - Clean all logs in runtime/logs
+- cleanOutput - Clean runtime/output directory
+- cleanIndexes - Remove search indexes (e.g. Lucene) from runtime/indexes
+- cleanTempfiles - Remove file in runtime/tempfiles
+- cleanUploads - Remove uploaded files.
+- cleanXtra - Clean extra generated files like .rej, .DS_Store, etc.
+- cleanFooterFiles - clean generated footer files
+- cleanNpm - clean node modules
+### Rules-based OFBiz server commands
+- `tasks.addRule('Pattern: ofbiz <Commands>: Execute OFBiz startup commands')`
+- `tasks.addRule('Pattern: ofbizBackground <Commands>: Execute OFBiz startup commands in background and output to console.log')`
+### Helper Functions
+- createOfbizCommandTask
+- createOfbizBackgroundCommandTask
+- spawnProcess
+- getDirectoryInActiveComponentsIfExists
+- deleteAllInDirWithExclusions
+- generateFileFromTemplate
+- getJarClasspath
+- subprojectExists
+- taskExistsInproject
+- gradlewSubprocess
