@@ -93,4 +93,32 @@ It seems to clean up stuff added by Eclipse.
 - createTenant - *Create a new tenant in your environment*
 - generateDatabaseTemplateFile
 - generateAdminUserTemplateFile
+- createOfbizCommandTask
+- createOfbizCommandTask
+- createOfbizCommandTask
+### Documentation tasks
+- `tasks.withType(AsciidoctorTask)`
+- deleteOfbizDocumentation
+- deletePluginDocumentation
+- deleteAllPluginsDocumentation
+- generateReadmeFiles - Generate OFBiz README files
+- generateOfbizDocumentation - Generate OFBiz documentation manuals
+- generatePluginDocumentation - Generate plugin documentation. Expects pluginId flag
+- generateAllPluginsDocumentation - Generate all plugins documentation
+### System Administration tasks
+- createTestReports - Generate HTML reports from junit XML output
+- gitInfoFooter - Update the Git Branch-revision info in the footer if Git is used
+### OFBiz Plugin Management
+- createPlugin - create a new plugin component based on specified templates
+- installPlugin - executes plugin install task if it exists
+- uninstallPlugin - executes plugin uninstall task if it exists
+- removePlugin - Uninstall a plugin and delete its files
+- pushPlugin - push an existing plugin to local maven repository
+- pullPlugin - Download and install a plugin with all dependencies
+- pullPluginSource - Download and install a plugin from source control
+- pullAllPluginsSource - Download and install all plugins from source control. **Warning! deletes existing plugins**
+### Clean up tasks
+- cleanCatalina - Clean Catalina data in runtime/catalina/work
+- cleanData - Clean all DB data (Derby) under runtime/data
+- cleanDownloads - Clean all downloaded files
 - 
