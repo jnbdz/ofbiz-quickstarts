@@ -16,6 +16,17 @@
 - `applications/commonext/data/OfbizSetupProductStoreData.xml`
 - `applications/product/minilang/product/test/GroupOrderTest.xml`
 - `applications/accounting/config/payment.properties`
+- `applications/accounting/src/main/java/org/apache/ofbiz/accounting/thirdparty/verisign/PayflowPro.java`
+- `applications/order/src/main/java/org/apache/ofbiz/order/order/OrderReturnServices.java`
+- `applications/order/src/main/java/org/apache/ofbiz/order/shoppingcart/CheckOutEvents.java`
+- `applications/order/src/main/java/org/apache/ofbiz/order/shoppingcart/CheckOutHelper.java`
+- `applications/order/src/main/java/org/apache/ofbiz/order/thirdparty/paypal/ExpressCheckoutEvents.java`
+- `applications/accounting/config/AccountingEntityLabels.xml`
+- `applications/accounting/config/AccountingErrorUiLabels.xml`
+- `applications/accounting/config/AccountingUiLabels.xml`
+- `applications/accounting/src/main/java/org/apache/ofbiz/accounting/thirdparty/paypal/PayPalEvents.java`
+- `applications/accounting/src/main/java/org/apache/ofbiz/accounting/thirdparty/paypal/PayPalServices.java`
+- `applications/order/src/main/java/org/apache/ofbiz/order/order/OrderReturnServices.java`
 
 ### Templates
 - `applications/order/template/entry/CheckoutOptions.ftl`
