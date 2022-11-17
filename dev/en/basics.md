@@ -25,3 +25,33 @@ The two ways you can download [OFBiz](https://ofbiz.apache.org/):
 ```bash
 ./gradlew createPlugin -PpluginId=ofbizDemo
 ```
+
+### Hello World!
+1. Edit `$OFBIZ_HOME/plugins/ofbizDemo/widget/OfbizDemoScreens.xml` and add `<label text="Hello World!! :)"/>`
+```xml
+<?xmlversion="1.0"encoding="UTF-8"?>
+<screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://ofbiz.apache.org/Widget-Screen" xsi:schemaLocation="http://ofbiz.apache.org/Widget-Screen http://ofbiz.apache.org/dtds/widget-screen.xsd">
+    <screen name="main">
+        <section>
+            <actions>
+                <set field="headerItem" value="main"/><!-- this highlights the selected menu-item with name "main" -->
+            </actions>
+            <widgets>
+                <decorator-screen name="OfbizDemoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <label text="Hello World!! :)"/>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+</screens>
+```
+2. `$ ./gradlew loadAll ofbiz`
+3. Go here https://localhost:8443/ofbizDemo
+4. Login with user: **admin** password: **ofbiz**
+
+### Creating First Database Entity (similar to a SQL Table)
+1. Defining entity
+
