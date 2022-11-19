@@ -95,4 +95,43 @@ The two ways you can download [OFBiz](https://ofbiz.apache.org/):
 <entity-resource type="model" reader-name="main" loader="main" location="entitydef/entitymodel.xml"/>
 ```
 
+3. `./gradlew ofbiz`
 
+4. https://localhost:8443/webtools/control/entitymaint
+
+### Preparing data for an entity
+
+1. Edit `$OFBIZ_HOME/plugins/ofbizDemo/data/OfbizDemoTypeData.xml`: 
+
+**OfbizDemoTypeData.xml**
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <OfbizDemoType ofbizDemoTypeId="INTERNAL" description="Internal Demo - Office"/>
+    <OfbizDemoType ofbizDemoTypeId="EXTERNAL" description="External Demo - On Site"/>
+</entity-engine-xml>
+```
+
+**OfbizDemoDemoData.xml**
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <OfbizDemo ofbizDemoId="SAMPLE_DEMO_1" ofbizDemoTypeId="INTERNAL" firstName="Sample First 1" lastName="Sample Last 1" comments="This is test comment for first record."/>
+    <OfbizDemo ofbizDemoId="SAMPLE_DEMO_2" ofbizDemoTypeId="INTERNAL" firstName="Sample First 2" lastName="Sample last 2" comments="This is test comment for second record."/>
+    <OfbizDemo ofbizDemoId="SAMPLE_DEMO_3" ofbizDemoTypeId="EXTERNAL" firstName="Sample First 3" lastName="Sample last 3" comments="This is test comment for third record."/>
+    <OfbizDemo ofbizDemoId="SAMPLE_DEMO_4" ofbizDemoTypeId="EXTERNAL" firstName="Sample First 4" lastName="Sample last 4" comments="This is test comment for fourth record."/>
+</entity-engine-xml>
+```
+
+2. Edit `$OFBIZ_HOME/plugins/ofbizDemo/ofbiz-component.xml`: 
+
+```xml
+<entity-resource type="data" reader-name="seed" loader="main" location="data/OfbizDemoTypeData.xml"/>
+<entity-resource type="data" reader-name="demo" loader="main" location="data/OfbizDemoDemoData.xml"/>
+```
+
+4. `./gradlew loadAll`
+
+5. https://localhost:8443/webtools/control/EntityImport
+
+6. 
