@@ -169,4 +169,88 @@ The two ways you can download [OFBiz](https://ofbiz.apache.org/):
 
 3. `./gradlew ofbiz`
 
-4. 
+### Use of UI Labels (Introduction)
+Internationalization is made easy.
+
+Example **OfbizDemoUiLabels.xml**: 
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/ofbiz-properties.xsd">
+    <property key="OfbizDemoApplication">
+        <value xml:lang="en">OfbizDemo Application</value>
+        <value xml:lang="zh">OfbizDemo应用程�?</value>
+        <value xml:lang="zh-TW">OfbizDemo應用程�?</value>
+    </property>
+    <property key="OfbizDemoCompanyName">
+        <value xml:lang="en">OFBiz: OfbizDemo</value>
+        <value xml:lang="zh-TW">OFBiz: OfbizDemo</value>
+    </property>
+    <property key="OfbizDemoCompanySubtitle">
+        <value xml:lang="en">Part of the Apache OFBiz Family of Open Source Software</value>
+        <value xml:lang="it">Un modulo della famiglia di software open source Apache OFBiz</value>
+        <value xml:lang="zh">开�?软件OFBiz的组�?部分</value>
+        <value xml:lang="zh-TW">開�?軟體OFBiz的組�?部分</value>
+    </property>
+    <property key="OfbizDemoViewPermissionError">
+        <value xml:lang="en">You are not allowed to view this page.</value>
+        <value xml:lang="zh">�?�?许你�?览这个页�?�。</value>
+        <value xml:lang="zh-TW">�?�?許您檢視這個�?�?�.</value>
+    </property>
+</resource>
+```
+
+### Create the add Form
+1. `$OFBIZ_HOME/plugins/ofbizDemo/widget/OfbizDemoForms.xml`: 
+
+**OfbizDemoForms.xml**: 
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://ofbiz.apache.org/Widget-Form" xsi:schemaLocation="http://ofbiz.apache.org/Widget-Form http://ofbiz.apache.org/dtds/widget-form.xsd">
+  
+    <form name="AddOfbizDemo" type="single" target="createOfbizDemo">
+        <!-- We have this utility in OFBiz to render form based on service definition.
+             Service attributes will automatically lookedup and will be shown on form
+        -->
+        <auto-fields-service service-name="createOfbizDemo"/>
+        <field name="ofbizDemoTypeId" title="${uiLabelMap.CommonType}">
+            <drop-down allow-empty="false" current-description="">
+                <!---We have made this drop down options dynamic(Values from db) using this -->
+                <entity-options description="${description}" key-field-name="ofbizDemoTypeId" entity-name="OfbizDemoType">
+                    <entity-order-by field-name="description"/>
+                </entity-options>
+            </drop-down>
+        </field>
+        <field name="submitButton" title="${uiLabelMap.CommonAdd}"><submit button-type="button"/></field>
+    </form>
+</forms>
+```
+
+2. Adding Form Location to the Main Screen.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://ofbiz.apache.org/Widget-Screen" xsi:schemaLocation="http://ofbiz.apache.org/Widget-Screen http://ofbiz.apache.org/dtds/widget-screen.xsd">
+  
+    <screen name="main">
+        <section>
+            <actions>
+                <set field="headerItem" value="main"/> <!-- this highlights the selected menu-item with name "main" -->
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="Add Ofbiz Demo">
+                            <include-form name="AddOfbizDemo" location="component://ofbizDemo/widget/OfbizDemoForms.xml"/>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+</screens>
+```
+
+
+
