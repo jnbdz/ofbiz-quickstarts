@@ -130,8 +130,43 @@ The two ways you can download [OFBiz](https://ofbiz.apache.org/):
 <entity-resource type="data" reader-name="demo" loader="main" location="data/OfbizDemoDemoData.xml"/>
 ```
 
-4. `./gradlew loadAll`
+4. `./gradlew loadAll` or https://localhost:8443/webtools/control/EntityImport
 
-5. https://localhost:8443/webtools/control/EntityImport
 
-6. 
+5. To see the result: https://localhost:8443/webtools/control/entitymaint
+
+## Form and Services
+### Create a Service
+[Service Engine Guide | OFBiz](https://cwiki.apache.org/confluence/display/OFBIZ/Service+Engine+Guide)
+
+1. Edit `$OFBIZ_HOME/plugins/ofbizDemo/servicedef/services.xml`: 
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/services.xsd">
+  
+    <description>OfbizDemo Services</description>
+    <vendor></vendor>
+    <version>1.0</version>
+  
+    <service name="createOfbizDemo" default-entity-name="OfbizDemo" engine="entity-auto" invoke="create" auth="true">
+        <description>Create an Ofbiz Demo record</description>
+        <auto-attributes include="pk" mode="OUT" optional="false"/>
+        <auto-attributes include="nonpk" mode="IN" optional="false"/>
+        <override name="comments" optional="true"/>
+    </service>
+  
+</services>
+```
+
+2. Edit `$OFBIZ_HOME/plugins/ofbizDemo/ofbiz-component.xml`: 
+
+```xml
+<!-- service resources: model(s), eca(s) and group definitions -->
+<service-resource type="model" loader="main" location="servicedef/services.xml"/>
+```
+
+3. `./gradlew ofbiz`
+
+4. 
