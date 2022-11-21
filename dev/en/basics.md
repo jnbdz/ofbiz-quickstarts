@@ -278,4 +278,132 @@ Example **OfbizDemoUiLabels.xml**:
 </screens>
 ```
 
+### Controller Entry for Form
 
+> IMPORTANT! You will need this for the form to call the right service.
+
+1. Edit `$OFBIZ_HOME/plugins/ofbizDemo/webapp/ofbizDemo/WEB-INF/controller.xml`: 
+
+```xml
+<request-map uri="createOfbizDemo">
+    <security https="true" auth="true"/>
+    <event type="service" invoke="createOfbizDemo"/>
+    <response name="success" type="view" value="main"/>
+</request-map>
+```
+
+2. Go to https://localhost:8443/ofbizDemo/
+
+### Create a Find Form
+Find form so that you can search the data from this plugin.
+
+1. Edit `widget/OfbizDemoForms.xml`: 
+
+```xml
+<form name="FindOfbizDemo" type="single" target="FindOfbizDemo" default-entity-name="OfbizDemo">
+    <field name="noConditionFind"><hidden value="Y"/> <!-- if this isn't there then with all fields empty no query will be done --></field>
+    <field name="ofbizDemoId" title="${uiLabelMap.OfbizDemoId}"><text-find/></field>
+    <field name="firstName" title="${uiLabelMap.OfbizDemoFirstName}"><text-find/></field>
+    <field name="lastName" title="${uiLabelMap.OfbizDemoLastName}"><text-find/></field>
+    <field name="ofbizDemoTypeId" title="${uiLabelMap.OfbizDemoType}">
+        <drop-down allow-empty="true" current-description="">
+            <entity-options description="${description}" key-field-name="ofbizDemoTypeId" entity-name="OfbizDemoType">
+                <entity-order-by field-name="description"/>
+            </entity-options>
+        </drop-down>
+    </field>
+    <field name="searchButton" title="${uiLabelMap.CommonFind}" widget-style="smallSubmit"><submit button-type="button" image-location="/images/icons/magnifier.png"/></field>
+</form>
+  
+<form name="ListOfbizDemo" type="list" list-name="listIt" paginate-target="FindOfbizDemo" default-entity-name="OfbizDemo" separate-columns="true"
+    odd-row-style="alternate-row" header-row-style="header-row-2" default-table-style="basic-table hover-bar">
+    <actions>
+       <!-- Preparing search results for user query by using OFBiz stock service to perform find operations on a single entity or view entity -->
+       <service service-name="performFind" result-map="result" result-map-list="listIt">
+           <field-map field-name="inputFields" from-field="ofbizDemoCtx"/>
+           <field-map field-name="entityName" value="OfbizDemo"/>
+           <field-map field-name="orderBy" from-field="parameters.sortField"/>
+           <field-map field-name="viewIndex" from-field="viewIndex"/>
+           <field-map field-name="viewSize" from-field="viewSize"/>
+        </service>
+    </actions>
+    <field name="ofbizDemoId" title="${uiLabelMap.OfbizDemoId}"><display/></field>
+    <field name="ofbizDemoTypeId" title="${uiLabelMap.OfbizDemoType}"><display-entity entity-name="OfbizDemoType"/></field>
+    <field name="firstName" title="${uiLabelMap.OfbizDemoFirstName}" sort-field="true"><display/></field>
+    <field name="lastName" title="${uiLabelMap.OfbizDemoLastName}" sort-field="true"><display/></field>
+    <field name="comments" title="${uiLabelMap.OfbizDemoComment}"><display/></field>
+</form>
+```
+
+> @TODO - More to add.
+
+## Services using other engines
+This is for business logic.
+
+### Service in Java
+1. Edit `$OFBIZ_HOME/plugins/ofbizDemo/servicedef/services.xml`: 
+
+```xml
+<service name="createOfbizDemoByJavaService" default-entity-name="OfbizDemo" engine="java"
+        location="com.companyname.ofbizdemo.services.OfbizDemoServices" invoke="createOfbizDemo" auth="true">
+    <description>Create an Ofbiz Demo record using a service in Java</description>
+    <auto-attributes include="pk" mode="OUT" optional="false"/>
+    <auto-attributes include="nonpk" mode="IN" optional="false"/>
+    <override name="comments" optional="true"/>
+</service>
+```
+
+2. Create package "com.companyname.ofbizdemo.services"
+
+> `src/main/java/com/companyname/ofbizdemo/services`
+
+3. Create file `OfbizDemoServices.java`: 
+
+```java
+package com.companyname.ofbizdemo.services;
+import java.util.Map;
+
+import org.apache.ofbiz.base.util.Debug;
+import org.apache.ofbiz.entity.Delegator;
+import org.apache.ofbiz.entity.GenericEntityException;
+import org.apache.ofbiz.entity.GenericValue;
+import org.apache.ofbiz.service.DispatchContext;
+import org.apache.ofbiz.service.ServiceUtil;
+
+public class OfbizDemoServices {
+
+    public static final String module = OfbizDemoServices.class.getName();
+
+    public static Map<String, Object> createOfbizDemo(DispatchContext dctx, Map<String, ? extends Object> context) {
+        Map<String, Object> result = ServiceUtil.returnSuccess();
+        Delegator delegator = dctx.getDelegator();
+        try {
+            GenericValue ofbizDemo = delegator.makeValue("OfbizDemo");
+            // Auto generating next sequence of ofbizDemoId primary key
+            ofbizDemo.setNextSeqId();
+            // Setting up all non primary key field values from context map
+            ofbizDemo.setNonPKFields(context);
+            // Creating record in database for OfbizDemo entity for prepared value
+            ofbizDemo = delegator.create(ofbizDemo);
+            result.put("ofbizDemoId", ofbizDemo.getString("ofbizDemoId"));
+            Debug.log("==========This is my first Java Service implementation in Apache OFBiz. OfbizDemo record created successfully with ofbizDemoId: "+ofbizDemo.getString("ofbizDemoId"));
+        } catch (GenericEntityException e) {
+            Debug.logError(e, module);
+            return ServiceUtil.returnError("Error in creating record in OfbizDemo entity ........" +module);
+        }
+        return result;
+    }
+}
+```
+
+4. `./gradlew ofbiz`: 
+
+5. https://localhost:8443/webtools/control/runService or update the controller `$OFBIZ_HOME/plugins/ofbizDemo/webapp/ofbizDemo/WEB-INF/controller.xml`: 
+
+```xml
+<request-map uri="createOfbizDemoByJavaService">
+    <security https="true" auth="true"/>
+    <event type="service" invoke="createOfbizDemoByJavaService"/>
+    <response name="success" type="view" value="main"/>
+</request-map>
+```
