@@ -23,7 +23,7 @@
 
 > OFBiz Service Engine uses the factory pattern.
 
-Third-Party execution engines including, but not limited to: 
+- Third-Party execution engines including, but not limited to: 
     - Java
     - Groovy
     - JavaScript
@@ -33,13 +33,25 @@ Third-Party execution engines including, but not limited to:
 
 > The Service Engine can be called from anywhere in the framework.
 
+> Many services come out of the box with OFBiz
+
 ![OFBiz Service Engine](../assets/OFBiz-Service-engine.svg)
 
-## Managing existing OFBiz Services 
-- Many services come out of the box with OFBiz
+## Managing existing OFBiz Services
 - https://localhost:8443/webtools/control/ServiceList
+- Access by privileged users
+- Control via OFBiz WebTools toolkit
+
+> It is possible to navigate by filtering by **alphabetic** order, **Service Name**, **Engine Name** (Service Engine Type), what is **Invoke**, **Location**.
+
+- Asynchronous and scheduled Service request
+    - Managed by OFBiz job scheduler
+    - `~/framework/service/config/serviceengine.xml`
+    - Threads run from one or more thread "pools"
+    - 
 
 ## Calling a Service from an HTML form
+
 
 ## Calling asynchronous Services from HTML forms
 
