@@ -1,4 +1,10 @@
 # Services | EN | OFBiz
+> Official documentation: https://cwiki.apache.org/confluence/display/OFBIZ/Service+Engine+Guide
+
+> *Services require input parameters to be in a Map and the results are returned in a Map as well. This is nice since a Map can be serialized and stored or passed via HTTP (SOAP).* ~ OFBiz Doc
+
+> Services are defined: Service Definition and assigned to a specific Service Engine.
+
 - Context-aware Service Engine
     - Used across the entire framework
     - Or externally through network interface
