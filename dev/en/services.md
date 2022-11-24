@@ -51,7 +51,40 @@
     - 
 
 ## Calling a Service from an HTML form
+- By setting the HTML form *action* element to point to the URL of a `controller.xml` request-map that resolves to either an OFBiz Event that calls a Service or directly to a Service
 
+The example here uses the WebTool's **Run Service** HTML form to invoke a Service.
+
+In this example the *testScv* will be used.
+
+To view the results of *testScv* you can use `tail` command on the OFBIz log: `tail -f ${OFBIZ_HOME}/runtime/ofbiz.log`
+
+### To call a service
+1. Go to **Run Service** WebTools: https://localhost:8443/webtools/control/runService
+2. In **Run Service**, enter **testScv** in the field labeled **Service**
+3. **Pool** field keeps its default value
+4. Click on **Submit** it will redirect to the **Schedule Job** page
+5. On the **Schedule Job** page, input in the any values for the requested form fields (e.g.: 8888.222).
+6. Click **Submit** (*testScv* is called)
+7. Inspect the `ofbiz.log` file you should see the number you have input in
+
+### Explanation
+1. In a HTML form an *action* attribute URL for the target Service
+2. Adding to a `controller.xml` a entry with a request-map for the target Service that matches the HTML form's *action* URL.
+
+Example for **Run Service**: 
+```html
+<form name="scheduleForm" method="POST" action="/webtools/control/scheduleService">
+    <input type="text" name="testScv" />
+    <!-- and more stuff -->
+</form>
+```
+
+```xml
+<request-map uri="scheduleService">
+    <security https="true" auth="true"/>
+    <response>
+```
 
 ## Calling asynchronous Services from HTML forms
 
