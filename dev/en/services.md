@@ -80,17 +80,81 @@ Example for **Run Service**:
 </form>
 ```
 
+When submitted action = `webtools/control/scheduledService` is caught by WebTools controller servlet with `controller.xml` file to determine how to handle this request.
+
 ```xml
 <request-map uri="scheduleService">
     <security https="true" auth="true"/>
     <response>
 ```
 
+The URL request is mapped to an OFBiz Event called `scheduleService`.
+
+Inside this event a call is made to the Service Engine to call *testScv* using the Java Service implementation engine as shown in the *testScv* Service defintion file.
+
+Once *testScv* is executed processing control returns to OFBiz request handler. Following that step the webapp is acalled as configured in the `controller.xml`.
+
 ## Calling asynchronous Services from HTML forms
+- WebTools and HTML forms can also be used to run a Service asynchronously either one time or a recurring basis.
+- https://localhost:8443/webtools/control/scheduleJob
+
+1. **Service** form field enter in **testScv**
+2. **Job** is left empty (a unique name will be picked)
+3. Pick a date in **Start Date/Time**
+
+- **Pool** - (default: one thread pool named **pool**) for more thread pools: `serviceengine.xml`
+- **Frequency** - A frequency of **None** tells OFBiz to run this Service once
+- **Interval** - To indicate how many times to invoke the Service
+- **Count** - -1 indicates forever
+
+4. Click **Submit** will return **Service Parameters** form (allows the called to provide other input parameters to the Service)
+5. Add INPUT parameter: 
+    - **defaultValue (Double)**
+    - **message (String)**
+6. Submit the **Service Parameters** (*testScv* will be scheduled to run at the specified time)
+
+The calling program will run asynchronously with Scheduled Services.
+
+Each scheduled Service is assigned a unique job identifier (`jobId`) and executed pool by the job scheduler.
+
+The control is returned to the calling program after the Service is scheduled for execution.
+
+> Using **Job List** web page you will find the scheduled jobs. You can also search those **Job List** the result will be in the **Job List Search Results** page.
+
+> *testScv* only writes output to the logfile.
 
 ## Calling a Service many times from an HTML form
+You might need to call a Service multiple times from a single HTML form for each row in a form. Using `service-multi` event type defined for the `controller.xml` request-map entry of the target Service.
+
+1. Event type `service-multi` within the `controller.xml` request-map entry.
+2. When using the Form Widget add a line similar to the one following the Form Widget definition. The `list-name` is the name of the list that is generating multiple rows for the HTML form: 
+```html
+<form name="someFormName" type="multi" use-row-submit="true" list-name="someList" target="someServiceName" ...
+</form>
+```
+3. When using FreeMarker template: 
+```html
+<form name="mostrecent" mode="POST" action="<@ofbizUrl>someService</@ofbizUrl>"/>
+   <#assign row=0/>
+   <#list someList as listItem>
+   <#-- HTML removed for reading clarity.
+        Each row has a unique input name associated with it
+        allowing this single Form to be submitted to the
+       "someServiceName" Service from each row -->
+   <input type="radio" name="someFormField_o_${row}" value="someValue" checked/>
+   <input type="radio" name="someFormField_o_${row}" value="someValue"/>
+   </#list>
+</form>
+```
+
+- `service-multi` is a Event type provides a convenient shortcut for coding HTML forms that are embedded within lists
+- Each item in the list is automatically conveted to a unique `form` field so that a single Service may be called from any row within a list
 
 ## Creating a new Service definition file
+- Service definition are in XML document are located in a Component's `servicedef` directoryi (`ofbiz-component.xml`).
+
+To define a new service definition file: 
+
 
 ## Creating a new Service definition
 
