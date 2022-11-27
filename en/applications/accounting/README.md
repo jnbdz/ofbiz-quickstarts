@@ -5,12 +5,12 @@ Like many of the applications that come with OFBiz it seamlessly integrates with
 
 ## About
 It is org.: 
-- double-entry - 
+- [double-entry](https://en.wikipedia.org/wiki/Double-entry_bookkeeping) - 
 - General Ledger with hierarchical accounts
 - journals
 - posting of transactions and corresponding entries
 - structure based on [OMG GL](https://www.omg.org/) standard - 
-- [AR/AP]() extension of the **OMG GL** standard
-- [ebXML]() - 
-- [OAGIS]() - 
+- [AR/AP](https://www.zoho.com/books/articles/accounts-receivable-accounts-payable-guide.html) extension of the **OMG GL** standard
+- [ebXML](http://www.ebxml.org/) - 
+- [OAGIS](https://oagi.org/) - 
 - 
