@@ -8,9 +8,11 @@ It is org.:
 - [double-entry](https://en.wikipedia.org/wiki/Double-entry_bookkeeping) - 
 - General Ledger with hierarchical accounts
 - journals
-- posting of transactions and corresponding entries
+- posting of transactions
+- corresponding entries
 - structure based on [OMG GL](https://www.omg.org/) standard - 
-- [AR/AP](https://www.zoho.com/books/articles/accounts-receivable-accounts-payable-guide.html) extension of the **OMG GL** standard
-- [ebXML](http://www.ebxml.org/) - 
-- [OAGIS](https://oagi.org/) - 
+- Correlates well with: 
+    - [AR/AP](https://www.zoho.com/books/articles/accounts-receivable-accounts-payable-guide.html) extension of the **OMG GL** standard
+    - [ebXML](http://www.ebxml.org/) - 
+    - [OAGIS](https://oagi.org/) - 
 - 
