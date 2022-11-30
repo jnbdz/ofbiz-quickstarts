@@ -28,7 +28,12 @@ Global GL Settings:
             - Related to what you do to produce
             - Sell to customers
         - Indirect: 
-            - 
+            - Not easily linked to what you are selling to customers
+            - Included: rent, electricity, general administration costs
+    - Fixed and variable Costs
+        - Variable costs: Example: the number of products you sell or produce
+        - Fixed: Example: How many products you sell or not will not change that cost
+    - 
 - **Payment Method Type** - a master list of the ways payments can be made (e.g. cash, credit card, etc) and the default accounts to be used for each
 - **Invoice Item Type** - a master list of all the transaction line types that can occur on any invoice and the default account to be used for each
 - **Rates** - a list of rates (e.g. pay rates, overtime rates etc) that can be used for billing work,tasks or as part of salary calculations
