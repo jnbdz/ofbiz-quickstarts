@@ -126,15 +126,96 @@ You can:
 - Delete performance review item
 
 ## Qualifications
-- 
+- Feature of recruitment process
+- Verify the minimum set of qualifications as a requirement for a positions
+- Capture of the qualification and verification
+- Qualifications can be added at any time
+- Qualifications can expire of not renewed (expiry and renewal date) (e.g.: Kafka certification with a ~3 year limit for validity)
 
 ## Recruitment
+- Fulfill roles that you have available
+- Job Requisition -> job position that needs to be fulfilled
+- Job Requisition identifies: 
+    - skills
+    - qualifications
+    - experience
+    - number of resources needed for a position
+- Default is Job Requisition is for Internal Job posting
+- Requisition needs to be created then create Job Posting based on the requisition
+- Example: 
+   - The requisition was for 3 roles
+   - Then three job postings can be created
+   - Each job with a application deadline
+- People can apply
+- Send their CVs or Resumes
+- Track the progress of the application
+- Create details about various types of job interviews
+    - HR
+    - Panel
+    - Case Study/Practical Test
+    - etc
+- Link to the requisition
+- Track the status of people that have applied for a position
+
+You can: 
+- Approve or reject job applications
+- Manage and book job interviews
+- Record the result of job interviews
 
 ## Skills
+- Types: general and specific
+- Characterised: years of experience, rating or level of expertise
+- OFBiz basic skills can be defined in Global HR Settings
+- linked to actual individuals via the Skills menu option
+- Skills are part of the *job requisition*
+- Record and track their newly acquired skills
+    - With this you might find an employee that already has the skills that you are looking for so no need to hire anyone else
+
+You can: 
+- Assign or link skills to job applicants (i.e. non employees)
+- Assign or link skills to existing employees
+- Search for existing employees that have the required skills for a job
 
 ## Resumes
+- Resumes or Curriculum Vitae (CVs)
+- enter a resume as a document and then link it to a person
+- resume entry has a unique identifier (that currently needs to be manually entered!)
+
+> The OFBiz Content Manager application is used for the linking of resumes because it was designed for managing, storing and retrieving electronic data in varying formats - such as text, images, MS Word, PDF or even web URL’s.
 
 ## Training
+- fill any gaps in skills and improve the proficiency of the existing workforce
+- HR module includes: 
+    - Training Calendar (things that can be scheduled)
+        - training classes
+        - events
+- HR administrator can: 
+    - create
+    - assign
+    - approve training classes
+- All other users can: 
+    - classes available
+    - their training status
+    - any requests they have made to enroll for training
+- General Process Flow
+    - Training classes are created in the Global HR Training Class Type screen
+    - Training classes are scheduled and added to the training calendar
+    - Employees can create a request to attend a training
+    - The employee supervisor needs to approve or reject the employee training request
+    - Employees can check the status of the training requests
+- Training Calendar
+    - This is the main screen
+    - From here you add classes and participants
+    - You can navigate the calendar by clicking the navigation text for day, week and month views located in the calendar title bar
+- Add New Training Event
+    - In the Training Calendar you can click on Add New (located in each calendar day cell)
+    - This action opens a small window above the calendar to enter the training class details
+    > If you try to create a class and do not have correct User permissions, you will get an error. After a class is created a numeric class identifier and text identifier description appear in the calendar for the day of the class.
+- Request Training / Add a Training Participant
+    - by clicking on the class identifier you can add participants
+    - If you are the creator of the class the Participants window above and to the right of the calendar opens
+    - 
+- Approve Training
 
 ## Leave
 
