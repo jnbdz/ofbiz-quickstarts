@@ -216,6 +216,9 @@ You can:
     - If you are the creator of the class the Participants window above and to the right of the calendar opens
     - 
 - Approve Training
+    - The training administrator navigates to the Training Approvals screen
+    - Locates all requests with a status of "Assigned"
+    - 
 
 ## Leave
 
