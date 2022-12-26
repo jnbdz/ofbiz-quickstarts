@@ -13,6 +13,7 @@ It is org.:
 - structure based on [OMG GL](https://www.omg.org/) standard - 
 - Correlates well with: 
     - [AR/AP](https://www.zoho.com/books/articles/accounts-receivable-accounts-payable-guide.html) extension of the **OMG GL** standard
+        - [Accounts receivable | Wikipedia](https://en.wikipedia.org/wiki/Accounts_receivable)
     - [ebXML](http://www.ebxml.org/) [Wikipedia](https://en.wikipedia.org/wiki/EbXML) - 
     - [OAGIS](https://oagi.org/) [Wikipedia](https://de.wikipedia.org/wiki/Open_Application_Group_Integration_Specification) - 
 ### Support
